@@ -144,7 +144,7 @@ class StatsEquipment extends ModuleGraph
 				<div class="col-lg-4">
 					<p>'.$this->l('Indicates the percentage of each web browser used by customers.').'</p>
 					<hr/>
-					<a class="btn btn-default export-csv" href="'.Tools::safeOutput($_SERVER['REQUEST_URI']).'&export=1&exportType=browser">
+					<a class="btn btn-default export-csv" href="'.Tools::safeOutput($_SERVER['REQUEST_URI'].'&export=1&exportType=browser').'">
 						<i class="icon-cloud-upload"></i>'.$this->l('CSV Export').'
 					</a>
 				</div>
@@ -158,7 +158,7 @@ class StatsEquipment extends ModuleGraph
 				<div class="col-lg-4">
 					<p>'.$this->l('Indicates the percentage of each operating system used by customers.').'</p>
 					<hr/>
-					<a class="btn btn-default export-csv" href="'.Tools::safeOutput($_SERVER['REQUEST_URI']).'&export=1&exportType=os">
+					<a class="btn btn-default export-csv" href="'.Tools::safeOutput($_SERVER['REQUEST_URI'].'&export=1&exportType=os').'">
 						<i class="icon-cloud-upload"></i>'.$this->l('CSV Export').'
 					</a>
 				</div>
