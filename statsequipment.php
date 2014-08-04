@@ -130,10 +130,7 @@ class StatsEquipment extends ModuleGraph
 		<div class="alert alert-warning">
 			<h4>'.$this->l('Making sure that your website is accessible to as many people as possible').'</h4>
 			<p>
-			'.$this->l('When managing a website, it is important to keep track of the software used by visitors in order to be sure that the site displays the same way for everyone. 
-				PrestaShop was built to be compatible with the most recent Web browsers and computer operating systems (OS). 
-				However, because you may end up adding advanced features to your website or even modify the core PrestaShop code, these additions may not be accessible to everyone. 
-				That is why it is a good idea to keep track of the percentage of users for each type of software before adding or changing something that only a limited number of users will be able to access.').'
+			'.$this->l('When managing a website, it is important to keep track of the software used by visitors in order to be sure that the site displays the same way for everyone. PrestaShop was built to be compatible with the most recent Web browsers and computer operating systems (OS). However, because you may end up adding advanced features to your website or even modify the core PrestaShop code, these additions may not be accessible to everyone. That is why it is a good idea to keep track of the percentage of users for each type of software before adding or changing something that only a limited number of users will be able to access.').'
 			</p>
 		</div>
 		<div class="row row-margin-bottom">
