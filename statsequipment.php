@@ -38,15 +38,15 @@ class statsequipment extends ModuleGraph
     {
         $this->name = 'statsequipment';
         $this->tab = 'analytics_stats';
-        $this->version = '1.3.0';
+        $this->version = '2.0.0';
         $this->author = 'PrestaShop';
         $this->need_instance = 0;
 
         parent::__construct();
 
-        $this->displayName = $this->l('Browsers and operating systems');
-        $this->description = $this->l('Adds a tab containing graphs about web browser and operating system usage to the Stats dashboard.');
-        $this->ps_versions_compliancy = array('min' => '1.6', 'max' => _PS_VERSION_);
+        $this->displayName = $this->trans('Browsers and operating systems', array(), 'Modules.Statsequipment.Admin');
+        $this->description = $this->trans('Adds a tab containing graphs about web browser and operating system usage to the Stats dashboard.', array(), 'Modules.Statsequipment.Admin');
+        $this->ps_versions_compliancy = array('min' => '1.7.0.0', 'max' => _PS_VERSION_);
     }
 
     public function install()
@@ -128,11 +128,11 @@ class statsequipment extends ModuleGraph
 		<div class="panel-heading">'
             .$this->displayName.'
 		</div>
-		<h4>'.$this->l('Guide').'</h4>
+		<h4>'.$this->trans('Guide', array(), 'Admin.Global').'</h4>
 		<div class="alert alert-warning">
-			<h4>'.$this->l('Making sure that your website is accessible to as many people as possible').'</h4>
+			<h4>'.$this->trans('Making sure that your website is accessible to as many people as possible', array(), 'Modules.Statsequipment.Admin').'</h4>
 			<p>
-			'.$this->l('When managing a website, it is important to keep track of the software used by visitors so as to be sure that the site displays the same way for everyone. PrestaShop was built to be compatible with the most recent Web browsers and computer operating systems (OS). However, because you may end up adding advanced features to your website or even modifying the core PrestaShop code, these additions may not be accessible to everyone. That is why it is a good idea to keep track of the percentage of users for each type of software before adding or changing something that only a limited number of users will be able to access.').'
+			'.$this->trans('When managing a website, it is important to keep track of the software used by visitors so as to be sure that the site displays the same way for everyone. PrestaShop was built to be compatible with the most recent Web browsers and computer operating systems (OS). However, because you may end up adding advanced features to your website or even modifying the core PrestaShop code, these additions may not be accessible to everyone. That is why it is a good idea to keep track of the percentage of users for each type of software before adding or changing something that only a limited number of users will be able to access.', array(), 'Modules.Statsequipment.Admin').'
 			</p>
 		</div>
 		<div class="row row-margin-bottom">
@@ -141,10 +141,10 @@ class statsequipment extends ModuleGraph
 					'.$this->engine(array('type' => 'pie', 'option' => 'wb')).'
 				</div>
 				<div class="col-lg-4">
-					<p>'.$this->l('Indicates the percentage of each web browser used by customers.').'</p>
+					<p>'.$this->trans('Indicates the percentage of each web browser used by customers.', array(), 'Modules.Statsequipment.Admin').'</p>
 					<hr/>
 					<a class="btn btn-default export-csv" href="'.Tools::safeOutput($_SERVER['REQUEST_URI'].'&export=1&exportType=browser').'">
-						<i class="icon-cloud-upload"></i>'.$this->l('CSV Export').'
+						<i class="icon-cloud-upload"></i>'.$this->trans('CSV Export', array(), 'Modules.Statsequipment.Admin').'
 					</a>
 				</div>
 			</div>
@@ -155,17 +155,17 @@ class statsequipment extends ModuleGraph
 					'.$this->engine(array('type' => 'pie', 'option' => 'os')).'
 				</div>
 				<div class="col-lg-4">
-					<p>'.$this->l('Indicates the percentage of each operating system used by customers.').'</p>
+					<p>'.$this->trans('Indicates the percentage of each operating system used by customers.', array(), 'Modules.Statsequipment.Admin').'</p>
 					<hr/>
 					<a class="btn btn-default export-csv" href="'.Tools::safeOutput($_SERVER['REQUEST_URI'].'&export=1&exportType=os').'">
-						<i class="icon-cloud-upload"></i>'.$this->l('CSV Export').'
+						<i class="icon-cloud-upload"></i>'.$this->trans('CSV Export', array(), 'Modules.Statsequipment.Admin').'
 					</a>
 				</div>
 			</div>
 		</div>';
         if ($equipment) {
             $this->html .= '<table class="table">
-				<tr><th><span class="title_box  active">'.$this->l('Plugins').'</th></span><th></th></tr>';
+				<tr><th><span class="title_box  active">'.$this->trans('Plugins', array(), 'Modules.Statsequipment.Admin').'</th></span><th></th></tr>';
             foreach ($equipment as $name => $value) {
                 $this->html .= '<tr><td>'.$name.'</td><td>'.number_format(100 * $value, 2).'%</td></tr>';
             }
@@ -179,7 +179,7 @@ class statsequipment extends ModuleGraph
     {
         switch ($option) {
             case 'wb':
-                $this->_titles['main'] = $this->l('Web browser used');
+                $this->_titles['main'] = $this->trans('Web browser used', array(), 'Modules.Statsequipment.Admin');
                 $this->query = 'SELECT wb.`name`, COUNT(g.`id_web_browser`) AS total
 						FROM `'._DB_PREFIX_.'web_browser` wb
 						LEFT JOIN `'._DB_PREFIX_.'guest` g ON g.`id_web_browser` = wb.`id_web_browser`
@@ -191,7 +191,7 @@ class statsequipment extends ModuleGraph
                 break;
 
             case 'os':
-                $this->_titles['main'] = $this->l('Operating system used');
+                $this->_titles['main'] = $this->trans('Operating system used', array(), 'Modules.Statsequipment.Admin');
                 $this->query = 'SELECT os.`name`, COUNT(g.`id_operating_system`) AS total
 						FROM `'._DB_PREFIX_.'operating_system` os
 						LEFT JOIN `'._DB_PREFIX_.'guest` g ON g.`id_operating_system` = os.`id_operating_system`
