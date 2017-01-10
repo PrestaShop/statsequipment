@@ -46,7 +46,7 @@ class statsequipment extends ModuleGraph
 
         $this->displayName = $this->trans('Browsers and operating systems', array(), 'Modules.Statsequipment.Admin');
         $this->description = $this->trans('Adds a tab containing graphs about web browser and operating system usage to the Stats dashboard.', array(), 'Modules.Statsequipment.Admin');
-        $this->ps_versions_compliancy = array('min' => '1.7.0.0', 'max' => _PS_VERSION_);
+        $this->ps_versions_compliancy = array('min' => '1.7.1.0', 'max' => _PS_VERSION_);
     }
 
     public function install()
