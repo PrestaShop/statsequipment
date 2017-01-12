@@ -37,7 +37,7 @@ class StatsEquipment extends ModuleGraph
 	{
 		$this->name = 'statsequipment';
 		$this->tab = 'analytics_stats';
-		$this->version = '1.3.0';
+		$this->version = '1.3.1';
 		$this->author = 'PrestaShop';
 		$this->need_instance = 0;
 
