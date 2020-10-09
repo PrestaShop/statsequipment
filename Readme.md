@@ -2,7 +2,7 @@
 
 ## About
 
-Adds a tab containing graphs about web browser and operating system usage to the Stats dashboard.
+Enrich your stats, add a tab containing graphs about web browsers and operating system usage.
 
 ## Reporting issues
 
