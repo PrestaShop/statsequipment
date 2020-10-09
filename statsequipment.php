@@ -45,7 +45,7 @@ class statsequipment extends ModuleGraph
         parent::__construct();
 
         $this->displayName = $this->trans('Browsers and operating systems', array(), 'Modules.Statsequipment.Admin');
-        $this->description = $this->trans('Adds a tab containing graphs about web browser and operating system usage to the Stats dashboard.', array(), 'Modules.Statsequipment.Admin');
+        $this->description = $this->trans('Enrich your stats, add a tab containing graphs about web browsers and operating system usage.', array(), 'Modules.Statsequipment.Admin');
         $this->ps_versions_compliancy = array('min' => '1.7.1.0', 'max' => _PS_VERSION_);
     }
 
